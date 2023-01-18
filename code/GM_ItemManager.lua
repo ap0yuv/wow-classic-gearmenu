@@ -278,8 +278,8 @@ function me.FindQuickChangeItems(inventoryType, mustHaveOnUse)
   end
 
   for i = 0, 4 do
-    for j = 1, GetContainerNumSlots(i) do
-      local itemId = GetContainerItemID(i, j)
+    for j = 1, C_Container.GetContainerNumSlots(i) do
+      local itemId = C_Container.GetContainerItemID(i, j)
 
       if itemId and not me.IsDuplicateItem(items, itemId) then
         local item = me.AddItemsMatchingInventoryType(inventoryType, itemId, mustHaveOnUse)
@@ -394,8 +394,8 @@ function me.UnequipItemToBag(slot)
   PickupInventoryItem(slot.slotId)
 
   for i = 0, 4 do
-    for j = 1, GetContainerNumSlots(i) do
-      local itemId = GetContainerItemID(i, j)
+    for j = 1, C_Container.GetContainerNumSlots(i) do
+      local itemId = C_Container.GetContainerItemID(i, j)
       if itemId == nil then
         if i == 0 then
           PutItemInBackpack()

@@ -28,8 +28,8 @@
 ]]--
 
 RGGM_ENVIRONMENT = {
-  ADDON_IDENTIFIER = "com.ragedunicorn.wow.classic.gearmenu-addon",
-  LOG_LEVEL = 4,
-  LOG_EVENT = true,
-  DEBUG = true
+  ADDON_IDENTIFIER = "com.ragedunicorn.wow.bcc.gearmenu-addon",
+  LOG_LEVEL = 1,
+  LOG_EVENT = false,
+  DEBUG = false
 }

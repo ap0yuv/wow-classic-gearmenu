@@ -293,7 +293,7 @@ function me.UpdateCombatQueue(slotId, itemId)
 
         if itemId then
           if bagNumber ~= nil and bagPos ~= nil then
-            icon:SetTexture(GetContainerItemInfo(bagNumber, bagPos))
+            icon:SetTexture(C_Container.GetContainerItemInfo(bagNumber, bagPos))
             icon:Show()
           end
         else
