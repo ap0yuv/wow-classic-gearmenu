@@ -226,7 +226,6 @@ end
 --[[
   Visually update an empty changeslot
 
-
   @param {table} changeMenu
   @param {number} itemCount
   @param {table} gearSlotMetaData
@@ -236,8 +235,6 @@ end
 function me.UpdateEmptyChangeSlot(changeMenu, itemCount, gearSlotMetaData, emptySlotPosition, changeSlotSize)
   if not mod.configuration.IsUnequipSlotEnabled()
     or not mod.itemManager.HasItemEquipedInSlot(gearSlotMetaData.slotId) then return end
-
-
 
   if itemCount > RGGM_CONSTANTS.GEAR_BAR_CHANGE_SLOT_AMOUNT_ITEMS then
     itemCount = #changeMenuSlots -- last slot is reserved for the empty slot
@@ -321,7 +318,7 @@ function me.UpdateChangeMenuGearSlotCooldown()
   for _, changeMenuSlot in pairs(changeMenuSlots) do
     if changeMenuSlot.itemId ~= nil then
       if changeMenuFrame.showCooldowns then
-        local startTime, duration = GetItemCooldown(changeMenuSlot.itemId)
+        local startTime, duration = C_Container.GetItemCooldown(changeMenuSlot.itemId)
         CooldownFrame_Set(changeMenuSlot.cooldownOverlay, startTime, duration, true)
       else
         CooldownFrame_Clear(changeMenuSlot.cooldownOverlay)
